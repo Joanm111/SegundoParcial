@@ -34,15 +34,15 @@ namespace SegundoParcial.Controllers
               
                 
                     DHondt response = new DHondt();
-                    var est = partidos.FirstOrDefault();
+                    var pa = partidos.FirstOrDefault();
                     response.Nombre = parti.NombreP;
                     response.Votos = (parti.CantidadVotos);
-                response.lugar = 0;
+               
 
                 decimal porce = 0;
                  porce += parti.CantidadVotos * 3 / 100;
 
-                if (parti.CantidadVotos>=porce)
+                if (parti.CantidadVotos>porce)
                 {
                     responses.Add(response);
                 };
@@ -54,7 +54,7 @@ namespace SegundoParcial.Controllers
              
 
             }
-            return responses.OrderByDescending(s => s.lugar).ToList();
+            return responses.OrderByDescending(s => s.Votos).ToList();
         }
 
        

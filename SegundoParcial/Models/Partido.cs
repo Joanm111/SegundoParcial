@@ -11,6 +11,10 @@ namespace SegundoParcial.Models
 
         public List<Diputado> Diputados { get; set; }
 
+       
+
+
+
         public partial class Diputado
         {
 
